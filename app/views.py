@@ -1,3 +1,4 @@
+from email import message
 from flask import render_template
 from app import app
 
@@ -7,3 +8,4 @@ def index():
         Render the index page
         """
         return render_template('index.html')
+
