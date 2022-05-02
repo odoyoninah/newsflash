@@ -1,12 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "base.html%"}
+{% block content%}
+<h1 class="text-center">Trending News</h1>
+<ul>
+    {% for news in news %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <img src="{{news.urlToImage}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{news.title}}</h5>
+                    <p class="card-text"><strong>{{news.description}}</strong></p>
+                    <p class ="card-text">{{news.content}}</p>
+                    <p class="card-text"><small class="text-muted">{{news.publishedAt}}</small></p>
+
+                    <a href="{{url}}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</ul>
+{% endblock %}
