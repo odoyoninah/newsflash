@@ -8,15 +8,14 @@ bootstrap = Bootstrap()
 def create_app(config_name):
     app = Flask(__name__)
 
-app.config.from_object(config_options[config_name])
+    app.config.from_object(config_options[config_name])
 
-bootstrap.init_app(app)
+    bootstrap.init_app(app)
 
-from .main import main as main_blueprint
-app.register_blueprint(main_blueprint)
+    from .newsapp import newsapp as newsapp_blueprint
+    app.register_blueprint(newsapp_blueprint)
 
-from .request import configure_request
-configure_request(app)
+    from .request import configure_request
+    configure_request(app)
 
-
-return app
+    return app
