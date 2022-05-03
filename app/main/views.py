@@ -1,8 +1,8 @@
 from flask import render_template
-from . import newsapp
+from . import main
 from ..request import get_news
 
-@newsapp.route('/')
+@main.route('/')
 def index():
     
     """
