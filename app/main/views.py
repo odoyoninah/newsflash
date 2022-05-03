@@ -1,8 +1,10 @@
 from flask import render_template
-from . import main
+
+from app import main
+import app
 from ..request import get_news
 
-@main.route('/')
+@app.route('/')
 def index():
     
     """
@@ -12,6 +14,6 @@ def index():
     news = get_news()
     title = 'Home - Welcome to The best News Review Website Online'
     return render_template('index.html', title = title, news = news)
-    
+
 
     
