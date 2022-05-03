@@ -1,20 +1,20 @@
-{% extends "base.html%"}
+{% extends 'base.html'%}
 {% block content%}
 <h1 class="text-center">TRENDING NEWS</h1>
 <ul>
-    {% for news in news %}
+    {% for new in news %}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <img src="{{news.urlToImage}}" class="card-img-top" alt="...">
+                <img src="{{new.urlToImage}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{news.title}}</h5>
-                    <p class="card-text"><strong>{{news.description}}</strong></p>
-                    <p class ="card-text">{{news.content}}</p>
-                    <p class="card-text"><small class="text-muted">{{news.publishedAt}}</small></p>
+                    <h5 class="card-title">{{new.title}}</h5>
+                    <p class="card-text"><strong>{{new.description}}</strong></p>
+                    <p class ="card-text">{{new.content}}</p>
+                    <p class="card-text"><small class="text-muted">{{new.publishedAt}}</small></p>
 
-                    <a href="{{url}}" class="btn btn-primary">Read More</a>
+                    <a href="{{new.url}}" class="btn btn-primary">Read More</a>
                 </div>
             </div>
         </div>
